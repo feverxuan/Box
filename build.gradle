@@ -16,7 +16,14 @@ buildscript {
         // in the individual module build.gradle files
     }
 }
-
+android{
+	signingConfigs {
+        release {
+            v1SigningEnabled true  //打包时默认勾选 V1（Jar Signature）
+            v2SigningEnabled true  //打包时默认勾选 V2（Full APK Signature）
+        }
+    }
+}
 allprojects {
     repositories {
         gradlePluginPortal()
